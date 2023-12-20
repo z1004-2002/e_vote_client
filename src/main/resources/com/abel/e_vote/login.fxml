@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.LoginController">
+   <left>
+      <AnchorPane prefHeight="525.0" prefWidth="361.0" style="-fx-background-color: #0f7000;" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Circle layoutX="85.0" layoutY="157.0" radius="37.0" stroke="#752a11" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#0084ff00" />
+                        <Stop color="#c9ff00" offset="0.42528735632183906" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="66.0" layoutY="352.0" radius="52.0" stroke="#752a11" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#0084ff00" />
+                        <Stop color="#fff600a7" offset="0.42528735632183906" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="252.0" layoutY="93.0" radius="64.0" stroke="#752a11" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ff000000" />
+                        <Stop color="#ff000000" offset="0.01915708812260535" />
+                        <Stop color="#fff2007d" offset="0.3793103448275862" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="23.0" layoutY="14.0" radius="89.0" stroke="#752a11" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#0084ff00" />
+                        <Stop color="#87ff00" offset="0.42528735632183906" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="265.0" layoutY="415.0" radius="70.0" stroke="#752a11" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#0084ff00" />
+                        <Stop color="#beff00e3" offset="0.42528735632183906" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Label layoutX="96.0" layoutY="152.0" text="E-VOTE" textFill="WHITE">
+               <font>
+                  <Font name="Algerian" size="50.0" />
+               </font>
+            </Label>
+            <Text fill="WHITE" layoutX="96.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright(C). Tous Droits Réservés">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Text>
+            <Line endX="100.0" layoutX="185.0" layoutY="208.0" startX="-100.0" stroke="WHITE" />
+            <Label layoutX="150.0" layoutY="209.0" text="LOGIN" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <Circle layoutX="229.0" layoutY="294.0" radius="24.0" stroke="#752a11" strokeType="INSIDE" strokeWidth="0.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#0084ff00" />
+                        <Stop color="#ddff0035" offset="0.42528735632183906" />
+                        <Stop color="#126e008b" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="579.0" prefWidth="420.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="69.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page de connexion">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Text>
+            <Label layoutX="15.0" layoutY="207.0" text="Nom d'utilisateur" textFill="#0f7000">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="270.0" text="Mot de passe" textFill="#0f7000">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username" layoutX="181.0" layoutY="198.0" prefHeight="35.0" prefWidth="195.0" promptText="username">
+               <font>
+                  <Font size="17.0" />
+               </font></TextField>
+            <PasswordField fx:id="password" layoutX="181.0" layoutY="261.0" prefHeight="35.0" prefWidth="195.0" promptText="password">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="cancel" layoutX="81.0" layoutY="398.0" mnemonicParsing="false" onAction="#cancelAction" prefHeight="37.0" prefWidth="240.0" style="-fx-background-color: #0f7000;" text="Annuler" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="login" layoutX="81.0" layoutY="338.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="37.0" prefWidth="240.0" style="-fx-background-color: #0f7000;" text="Login" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Text fx:id="message" fill="RED" layoutX="19.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="363.9443359375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

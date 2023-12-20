@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.HomeController">
+   <left>
+      <AnchorPane prefHeight="545.0" prefWidth="189.0" style="-fx-background-color: #0f7000;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-VOTE" textAlignment="CENTER" wrappingWidth="141.13671875">
+               <font>
+                  <Font name="Algerian" size="31.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="15.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" textAlignment="CENTER" wrappingWidth="159.83203125">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <Line endX="83.0" layoutX="84.0" layoutY="43.0" startX="-63.0" stroke="WHITE" />
+            <Circle fill="#0088ff00" layoutX="23.0" layoutY="527.0" radius="9.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="4.0" />
+            <Line endX="4.0" fill="WHITE" layoutX="23.0" layoutY="518.0" rotate="90.0" startX="-4.0" stroke="WHITE" strokeWidth="4.0" />
+            <Button fx:id="logoutButton" layoutX="14.0" layoutY="509.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #ffffff00;" text="Logout" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

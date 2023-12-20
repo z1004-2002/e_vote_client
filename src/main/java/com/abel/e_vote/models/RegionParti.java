@@ -5,18 +5,14 @@ public class RegionParti {
     private Integer id_parti;
     private String nom_representant;
     private String nom_parti;
+    private Integer vote;
 
-    public RegionParti(Integer id_region, Integer id_parti, String nom_representant) {
-        this.id_region = id_region;
-        this.id_parti = id_parti;
-        this.nom_representant = nom_representant;
-    }
-
-    public RegionParti(Integer id_region, Integer id_parti, String nom_representant, String nom_parti) {
+    public RegionParti(Integer id_region, Integer id_parti, String nom_representant, String nom_parti, Integer vote) {
         this.id_region = id_region;
         this.id_parti = id_parti;
         this.nom_representant = nom_representant;
         this.nom_parti = nom_parti;
+        this.vote = vote;
     }
 
     public Integer getId_region() {
@@ -51,6 +47,14 @@ public class RegionParti {
         this.nom_parti = nom_parti;
     }
 
+    public Integer getVote() {
+        return vote;
+    }
+
+    public void setVote(Integer vote) {
+        this.vote = vote;
+    }
+
     @Override
     public String toString() {
         return "RegionParti{" +
@@ -58,6 +62,7 @@ public class RegionParti {
                 ", id_parti=" + id_parti +
                 ", nom_representant='" + nom_representant + '\'' +
                 ", nom_parti='" + nom_parti + '\'' +
+                ", vote=" + vote +
                 '}';
     }
 }

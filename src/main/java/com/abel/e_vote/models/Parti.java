@@ -1,19 +1,19 @@
 package com.abel.e_vote.models;
 
 public class Parti {
-    private String id_parti;
+    private Integer id_parti;
     private String nom;
 
-    public Parti(String id_parti, String nom) {
+    public Parti(Integer id_parti, String nom) {
         this.id_parti = id_parti;
         this.nom = nom;
     }
 
-    public String getId_parti() {
+    public Integer getId_parti() {
         return id_parti;
     }
 
-    public void setId_parti(String id_parti) {
+    public void setId_parti(Integer id_parti) {
         this.id_parti = id_parti;
     }
 
