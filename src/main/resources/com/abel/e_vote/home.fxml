@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
@@ -9,19 +12,84 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.HomeController">
    <left>
-      <AnchorPane prefHeight="545.0" prefWidth="189.0" style="-fx-background-color: #0f7000;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="545.0" prefWidth="252.0" style="-fx-background-color: #0f7000;" BorderPane.alignment="CENTER">
          <children>
-            <Text fill="WHITE" layoutX="23.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-VOTE" textAlignment="CENTER" wrappingWidth="141.13671875">
+            <Circle layoutX="219.0" layoutY="32.0" radius="20.0" stroke="#0f7000" strokeType="INSIDE">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="TRANSPARENT" />
+                        <Stop color="TRANSPARENT" offset="0.007662835249042145" />
+                        <Stop color="#c3ff00d6" offset="0.31417624521072796" />
+                        <Stop color="#0f7000" offset="0.881226053639846" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="94.0" layoutY="161.0" radius="73.0" stroke="#0f7000" strokeType="INSIDE">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="TRANSPARENT" />
+                        <Stop color="TRANSPARENT" offset="0.007662835249042145" />
+                        <Stop color="#c3ff0065" offset="0.31417624521072796" />
+                        <Stop color="#0f7000" offset="0.881226053639846" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="191.0" layoutY="312.0" radius="28.0" stroke="#0f7000" strokeType="INSIDE">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="TRANSPARENT" />
+                        <Stop color="TRANSPARENT" offset="0.007662835249042145" />
+                        <Stop color="#00ff1e95" offset="0.31417624521072796" />
+                        <Stop color="#0f7000" offset="0.881226053639846" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="74.0" layoutY="421.0" radius="53.0" stroke="#0f7000" strokeType="INSIDE">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="TRANSPARENT" />
+                        <Stop color="TRANSPARENT" offset="0.007662835249042145" />
+                        <Stop color="#65ff00d6" offset="0.31417624521072796" />
+                        <Stop color="#0f7000" offset="0.881226053639846" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle layoutX="203.0" layoutY="496.0" radius="40.0" stroke="#0f7000" strokeType="INSIDE">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="TRANSPARENT" />
+                        <Stop color="TRANSPARENT" offset="0.007662835249042145" />
+                        <Stop color="#c3ff00d6" offset="0.31417624521072796" />
+                        <Stop color="#0f7000" offset="0.881226053639846" />
+                        <Stop color="#0f7000" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Text fill="WHITE" layoutX="40.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-VOTE" textAlignment="CENTER" wrappingWidth="159.13671875">
                <font>
                   <Font name="Algerian" size="31.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="15.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" textAlignment="CENTER" wrappingWidth="159.83203125">
+            <Text fill="WHITE" layoutX="40.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" textAlignment="CENTER" wrappingWidth="159.83203125">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
-            <Line endX="83.0" layoutX="84.0" layoutY="43.0" startX="-63.0" stroke="WHITE" />
+            <Line endX="92.0" layoutX="110.0" layoutY="48.0" startX="-74.0" stroke="WHITE" />
             <Circle fill="#0088ff00" layoutX="23.0" layoutY="527.0" radius="9.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="4.0" />
             <Line endX="4.0" fill="WHITE" layoutX="23.0" layoutY="518.0" rotate="90.0" startX="-4.0" stroke="WHITE" strokeWidth="4.0" />
             <Button fx:id="logoutButton" layoutX="14.0" layoutY="509.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #ffffff00;" text="Logout" textAlignment="CENTER" textFill="WHITE">
@@ -29,7 +97,78 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+            <Button layoutX="1.0" layoutY="118.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Home" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="167.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Regions" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="273.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Représantant" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="221.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Partis" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="328.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Votes" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="381.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Résultats" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </left>
+   <center>
+      <AnchorPane prefHeight="545.0" prefWidth="505.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="335.0" fitWidth="481.0" layoutX="84.0" layoutY="-12.0" opacity="0.84" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Voting-pana.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="361.0" layoutY="208.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: green;" text="Button" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="187.0" layoutY="208.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: green;" text="Button" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="208.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: green;" text="Button" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="361.0" layoutY="370.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: green;" text="Button" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="187.0" layoutY="370.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: green;" text="Button" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="370.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: green;" text="Button" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class ServerAccess {
     public static InetAddress getAdressServer() throws UnknownHostException {
-        byte[] a = {10,55,41, (byte)174};
+        byte[] a = {127,0,0,1};
         return InetAddress.getByAddress(a);
     }
     public static List<Region> getAllRegions(){
@@ -260,6 +260,31 @@ public class ServerAccess {
             socket.send(packet);
 
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static String login(String username,String password){
+        try {
+            DatagramSocket socket = new DatagramSocket();
+            InetAddress ad2 = getAdressServer();
+            int port = 3000;
+
+            Map<String,Object> request = new HashMap<>();
+            request.put("name_request","login");
+            request.put("username",username);
+            request.put("password",password);
+
+            byte [] buf = Service.transformToByte(request);
+            DatagramPacket packet = new DatagramPacket(buf, buf.length,ad2,port);
+            socket.send(packet);
+
+            buf = new byte[5120];
+            packet = new DatagramPacket(buf, buf.length);
+
+            socket.receive(packet);
+            Map<String, Object> result = Service.transformToMap(packet.getData());
+            return (String) result.get("message");
+        } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
