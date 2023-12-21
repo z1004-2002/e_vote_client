@@ -97,7 +97,7 @@
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Button>
-                <Button fx:id="homeButton" layoutX="1.0" layoutY="120.0" mnemonicParsing="false" onAction="#goHome" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Home" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="homeButton" layoutX="1.0" layoutY="120.0" mnemonicParsing="false" onAction="#goHome" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Home" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -127,7 +127,7 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="aboutButton" layoutX="1.0" layoutY="398.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="About Us" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="aboutButton" layoutX="1.0" layoutY="398.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="About Us" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -138,7 +138,7 @@
     <center>
         <AnchorPane prefHeight="545.0" prefWidth="505.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="335.0" fitWidth="481.0" layoutX="84.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="222.0" fitWidth="228.0" layoutX="141.0" layoutY="71.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@Team%20work-amico.png" />
                     </image>
@@ -148,6 +148,11 @@
                         <Font name="System Bold" size="42.0" />
                     </font>
                 </Text>
+            <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="44.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      Bienvenue sur notre page À propos ! Nous sommes une équipe dynamique de trois étudiants ZOGNING T. Franc Abel, KOUASSI Bakhan et KOUASSI K. Abraham passionnés par la démocratie numérique. Avec notre logiciel de e-vote révolutionnaire, nous visons à rendre les élections plus accessibles, sécurisées et transparentes. Rejoignez-nous dans cette aventure et ensemble, construisons un avenir où chaque voix compte véritablement." textAlignment="JUSTIFY" textOrigin="CENTER" wrappingWidth="416.13671875">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
             </children>
         </AnchorPane>
     </center>

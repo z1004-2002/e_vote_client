@@ -1,28 +1,10 @@
 package com.abel.e_vote.controllers;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 import java.io.IOException;
 
 public class HomeController {
-    @FXML
-    public Button homeButton;
-    public Button regionButton;
-    public Button represantantButton;
-    public Button partiButton;
-    public Button voteButton;
-    public Button resultatButton;
-    public Button aboutButton;
-    public Button represantant;
-    public Button parti;
-    public Button region;
-    public Button about;
-    public Button resultat;
-    public Button vote;
-    @FXML
-    private Button logoutButton;
 
     public void logout(ActionEvent e) throws IOException {
         SwitchController.logout(e);
