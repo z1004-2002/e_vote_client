@@ -35,6 +35,5 @@ public class LoginController {
     public void cancelAction(ActionEvent e){
         username.setText("");
         password.setText("");
-        System.out.println(ServerAccess.getAllPartis());
     }
 }

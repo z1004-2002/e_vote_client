@@ -6,6 +6,7 @@ module com.abel.e_vote {
 
     opens com.abel.e_vote to javafx.fxml;
     exports com.abel.e_vote;
+    exports com.abel.e_vote.models;
     exports com.abel.e_vote.services;
     opens com.abel.e_vote.services to javafx.fxml;
     exports com.abel.e_vote.controllers;

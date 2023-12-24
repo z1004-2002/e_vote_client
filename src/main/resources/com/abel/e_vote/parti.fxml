@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.AboutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.PartiController">
     <left>
         <AnchorPane prefHeight="545.0" prefWidth="252.0" style="-fx-background-color: #0f7000;" BorderPane.alignment="CENTER">
             <children>
@@ -109,22 +109,22 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="partiButton" layoutX="1.0" layoutY="213.0" onAction="#goParti" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Partis" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="partiButton" layoutX="1.0" layoutY="213.0" mnemonicParsing="false" onAction="#goParti" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Partis" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="voteButton" onAction="#goVote" layoutX="1.0" layoutY="305.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Votes" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="voteButton" layoutX="1.0" layoutY="305.0" mnemonicParsing="false" onAction="#goVote" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Votes" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="resultatButton" onAction="#goResult" layoutX="1.0" layoutY="351.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Résultats" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="resultatButton" layoutX="1.0" layoutY="351.0" mnemonicParsing="false" onAction="#goResult" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Résultats" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="aboutButton" onAction="#goAbout" layoutX="1.0" layoutY="398.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="About Us" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="aboutButton" layoutX="1.0" layoutY="398.0" mnemonicParsing="false" onAction="#goAbout" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="About Us" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -135,21 +135,40 @@
     <center>
         <AnchorPane prefHeight="545.0" prefWidth="505.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="222.0" fitWidth="228.0" layoutX="141.0" layoutY="71.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@Team%20work-amico.png" />
-                    </image>
-                </ImageView>
-                <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A PROPOS DE NOUS" textAlignment="CENTER" wrappingWidth="441.25">
+            <TableView fx:id="listeRegion" layoutX="21.0" layoutY="216.0" prefHeight="295.0" prefWidth="461.0">
+              <columns>
+                <TableColumn fx:id="id_p_col" prefWidth="142.0" text="identifiant du parti" />
+                <TableColumn fx:id="nom_p" prefWidth="318.0" text="nom du parti" />
+              </columns>
+            </TableView>
+                <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PARTIS" textAlignment="CENTER" wrappingWidth="441.25">
                     <font>
                         <Font name="System Bold" size="42.0" />
                     </font>
                 </Text>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="44.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      Bienvenue sur notre page À propos ! Nous sommes une équipe dynamique de trois étudiants ZOGNING T. Franc Abel, KOUASSI Bakhan et KOUASSI K. Abraham passionnés par la démocratie numérique. Avec notre logiciel de e-vote révolutionnaire, nous visons à rendre les élections plus accessibles, sécurisées et transparentes. Rejoignez-nous dans cette aventure et ensemble, construisons un avenir où chaque voix compte véritablement." textAlignment="JUSTIFY" textOrigin="CENTER" wrappingWidth="416.13671875">
+            <Button fx:id="PartiAdd" layoutX="375.0" layoutY="112.0" mnemonicParsing="false" onAction="#addParti" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: #159c00cc;" text="+AJOUTER" textFill="WHITE">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="partiField" layoutX="44.0" layoutY="112.0" prefHeight="33.0" prefWidth="316.0" promptText="Nom Parti">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Text fill="#159c00" layoutX="22.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un parti politique">
+               <font>
+                  <Font size="14.0" />
                </font>
             </Text>
+            <Line endX="364.0" layoutX="117.0" layoutY="157.0" startX="-95.0" stroke="#159c00" />
+            <Line endX="364.0" layoutX="117.0" layoutY="76.0" startX="-95.0" stroke="#159c00" />
+            <Text fill="#159c00" layoutX="22.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des partis politiques">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="message" fill="RED" layoutX="193.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="264.0" />
             </children>
         </AnchorPane>
     </center>

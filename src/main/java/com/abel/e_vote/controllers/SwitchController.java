@@ -26,14 +26,14 @@ public class SwitchController {
         stage.show();
     }
     public static void goRegion(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("region.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
     }
     public static void goParti(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("parti.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

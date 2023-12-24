@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.image.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.HomeController">
@@ -117,7 +114,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="voteButton" layoutX="1.0" layoutY="305.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Votes" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="voteButton" layoutX="1.0" layoutY="305.0" mnemonicParsing="false" onAction="#goVote" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Votes" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -168,7 +165,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="vote" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #159c00cc;" text="VOTES" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="vote" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" prefHeight="130.0" onAction="#goVote"  prefWidth="130.0" style="-fx-background-color: #159c00cc;" text="VOTES" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
