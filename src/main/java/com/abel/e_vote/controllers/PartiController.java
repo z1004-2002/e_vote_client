@@ -1,7 +1,6 @@
 package com.abel.e_vote.controllers;
 
 import com.abel.e_vote.models.Parti;
-import com.abel.e_vote.models.Region;
 import com.abel.e_vote.services.ServerAccess;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -22,16 +21,19 @@ public class PartiController implements Initializable {
     public Text message;
     public Button PartiAdd;
     public TextField partiField;
-    public TableView<Parti> listeRegion;
+    public TableView<Parti> listeParti;
     public TableColumn<Parti,Integer> id_p_col;
     public TableColumn<Parti,String> nom_p;
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        fillTable();
+    }
     public void fillTable() {
         List<Parti> partis = ServerAccess.getAllPartis();
         id_p_col.setCellValueFactory(new PropertyValueFactory<>("id_parti"));
         nom_p.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        listeRegion.getItems().clear();
-        listeRegion.getItems().addAll(partis);
+        listeParti.getItems().clear();
+        listeParti.getItems().addAll(partis);
     }
     public void logout(ActionEvent e) throws IOException {
         SwitchController.logout(e);
@@ -57,11 +59,6 @@ public class PartiController implements Initializable {
     public void goAbout(ActionEvent e) throws IOException{
         SwitchController.goAbout(e);
     }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        fillTable();
-    }
-
     public void addParti(ActionEvent event) throws InterruptedException {
         String parti = partiField.getText();
         if (parti.equals("")){

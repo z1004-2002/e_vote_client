@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.AddRepController">
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table_p" layoutX="1.0" layoutY="154.0" prefHeight="135.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="id_p" prefWidth="150.0" text="Identifiant du parti" />
+                <TableColumn fx:id="nom_p" minWidth="0.0" prefWidth="449.0" text="Nom du Parti" />
+              </columns>
+            </TableView>
+            <Text fill="#00bc00" layoutX="1.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REPRESANTANT DE LA REGION 3" textAlignment="CENTER" wrappingWidth="600.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="button" layoutX="452.0" layoutY="92.0" mnemonicParsing="false" onAction="#ajouterRepresantat" prefHeight="30.0" prefWidth="135.0" style="-fx-background-color: #00bc00;" text="ENREGISTRER" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="field" layoutX="14.0" layoutY="92.0" prefHeight="30.0" prefWidth="422.0" promptText="Nom du represantant" />
+            <Line endX="469.0" layoutX="116.0" layoutY="38.0" startX="-100.0" stroke="#00bc00" style="-fx-fill: #00bc00;" />
+            <Line endX="469.0" layoutX="116.0" layoutY="75.0" startX="-100.0" stroke="#00bc00" style="-fx-fill: #00bc00;" />
+            <Text fx:id="message" fill="#408713" layoutX="18.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner un parti et entrer son represantant" textAlignment="CENTER" wrappingWidth="566.13671875">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="mes" layoutX="510.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="46.0" />
+            <Text fill="#00bc00" layoutX="18.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des partis" />
+            <TableView fx:id="table_part" layoutX="1.0" layoutY="335.0" prefHeight="158.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="id_part" prefWidth="114.0" text="Identifiant du parti" />
+                <TableColumn fx:id="nom_part" prefWidth="223.0" text="Nom du parti" />
+                  <TableColumn fx:id="nom_rep" prefWidth="262.0" text="Nom du represantant " />
+              </columns>
+            </TableView>
+            <Text fill="#00bc00" layoutX="18.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des represantants de chaque parti" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

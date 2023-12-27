@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.PartiController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.RepController">
     <left>
         <AnchorPane prefHeight="545.0" prefWidth="252.0" style="-fx-background-color: #0f7000;" BorderPane.alignment="CENTER">
             <children>
@@ -104,12 +104,12 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="represantantButton" layoutX="1.0" layoutY="259.0" mnemonicParsing="false" onAction="#goRep" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Représantant" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="represantantButton" layoutX="1.0" layoutY="259.0" mnemonicParsing="false" onAction="#goRep" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Représantant" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="partiButton" layoutX="1.0" layoutY="213.0" mnemonicParsing="false" onAction="#goParti" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Partis" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="partiButton" layoutX="1.0" layoutY="213.0" mnemonicParsing="false" onAction="#goParti" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Partis" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -135,40 +135,25 @@
     <center>
         <AnchorPane prefHeight="545.0" prefWidth="505.0" BorderPane.alignment="CENTER">
             <children>
-            <TableView fx:id="listeParti" layoutX="21.0" layoutY="216.0" prefHeight="295.0" prefWidth="461.0">
-              <columns>
-                <TableColumn fx:id="id_p_col" prefWidth="142.0" text="identifiant du parti" />
-                <TableColumn fx:id="nom_p" prefWidth="318.0" text="nom du parti" />
-              </columns>
-            </TableView>
-                <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PARTIS" textAlignment="CENTER" wrappingWidth="441.25">
+                <TableView fx:id="listeRegion" layoutX="21.0" layoutY="216.0" prefHeight="295.0" prefWidth="461.0">
+                    <columns>
+                        <TableColumn fx:id="id_r_col" prefWidth="75.0" text="id_region" />
+                        <TableColumn fx:id="nom_r" prefWidth="229.0" text="nom" />
+                        <TableColumn fx:id="nbr_ele" prefWidth="156.0" text="nombres électeurs" />
+                    </columns>
+                </TableView>
+                <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGIONS ET PARTIS" textAlignment="CENTER" wrappingWidth="441.25">
                     <font>
                         <Font name="System Bold" size="42.0" />
                     </font>
                 </Text>
-            <Button fx:id="PartiAdd" layoutX="375.0" layoutY="112.0" mnemonicParsing="false" onAction="#addParti" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: #159c00cc;" text="+AJOUTER" textFill="WHITE">
+                <Line endX="364.0" layoutX="117.0" layoutY="180.0" startX="-95.0" stroke="#159c00" />
+                <Line endX="364.0" layoutX="117.0" layoutY="76.0" startX="-95.0" stroke="#159c00" />
+                <Text fx:id="message" fill="GREEN" layoutX="86.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="355.0">
                <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <TextField fx:id="partiField" layoutX="44.0" layoutY="112.0" prefHeight="33.0" prefWidth="316.0" promptText="Nom Parti">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
-            <Text fill="#159c00" layoutX="22.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un parti politique">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Line endX="364.0" layoutX="117.0" layoutY="157.0" startX="-95.0" stroke="#159c00" />
-            <Line endX="364.0" layoutX="117.0" layoutY="76.0" startX="-95.0" stroke="#159c00" />
-            <Text fill="#159c00" layoutX="22.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des partis politiques">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fx:id="message" fill="RED" layoutX="193.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="264.0" />
+                  <Font size="13.0" />
+               </font></Text>
+            <Pane fx:id="pane" layoutX="141.0" layoutY="122.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="221.0" />
             </children>
         </AnchorPane>
     </center>

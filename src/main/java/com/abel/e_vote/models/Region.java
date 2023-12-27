@@ -1,5 +1,7 @@
 package com.abel.e_vote.models;
 
+import javafx.beans.property.Property;
+
 public class Region {
     private Integer id_region;
     private String nom;
@@ -43,4 +45,5 @@ public class Region {
                 ", electeurs=" + electeurs +
                 '}';
     }
+
 }

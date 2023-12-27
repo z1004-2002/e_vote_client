@@ -11,8 +11,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class HelloApplication extends Application {
-    public Button bu1;
-    public Button but2;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -21,6 +19,7 @@ public class HelloApplication extends Application {
         stage.setTitle("E-VOTE");
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("evote.png"))));
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

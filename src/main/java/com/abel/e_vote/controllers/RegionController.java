@@ -47,6 +47,12 @@ public class RegionController implements Initializable {
         listeRegion.getItems().addAll(regions);
     }
 
+    public void genererElecteur() throws InterruptedException {
+        ServerAccess.addElecteur();
+        Thread.sleep(200);
+        fillTable();
+    }
+
     public void logout(ActionEvent e) throws IOException {
         SwitchController.logout(e);
     }
