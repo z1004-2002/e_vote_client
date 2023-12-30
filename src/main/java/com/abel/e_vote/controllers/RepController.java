@@ -112,7 +112,6 @@ public class RepController implements Initializable {
                         add.setNom_r(nom_region);
                         stage.show();
                     });
-
                     return "Ajouter les represantants dans la region "+nom_region;
                 },listeRegion.getSelectionModel().selectedItemProperty())
         );

@@ -137,9 +137,9 @@
             <children>
             <TableView fx:id="listeRegion" layoutX="21.0" layoutY="216.0" prefHeight="295.0" prefWidth="461.0">
               <columns>
-                <TableColumn fx:id="id_r_col" prefWidth="75.0" text="id_region" />
-                <TableColumn fx:id="nom_r" prefWidth="229.0" text="nom" />
-                  <TableColumn fx:id="nbr_ele" prefWidth="156.0" text="nombres électeurs" />
+                <TableColumn fx:id="id_r_col" prefWidth="143.0" text="identifiant de la region" />
+                <TableColumn fx:id="nom_r" prefWidth="168.0" text="nom de la region" />
+                  <TableColumn fx:id="nbr_ele" prefWidth="149.0" text="nombres électeurs" />
               </columns>
             </TableView>
                 <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGIONS" textAlignment="CENTER" wrappingWidth="441.25">
@@ -170,7 +170,7 @@
                </font>
             </Text>
             <Text fx:id="message" fill="RED" layoutX="193.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="264.0" />
-            <Button fx:id="generate" onAction="#genererElecteur" layoutX="345.0" layoutY="166.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #159c00cc;" text="Generer Electeur" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="generate" layoutX="345.0" layoutY="166.0" mnemonicParsing="false" onAction="#genererElecteur" prefHeight="30.0" prefWidth="131.0" style="-fx-background-color: #159c00cc;" text="Generer Electeur" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font>

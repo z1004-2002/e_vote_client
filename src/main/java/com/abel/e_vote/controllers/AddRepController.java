@@ -21,6 +21,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -84,7 +85,7 @@ public class AddRepController implements Initializable {
 
     public void ajouterRepresantat() throws InterruptedException {
         if (table_p.getSelectionModel().getSelectedItem()==null){
-            message.setText("Sélectionner un parti et entrer son represantant");
+            message.setText("Sélectionner un parti dans la première et entrer son represantant");
             message.setStyle("-fx-text-fill:red");
         }else {
             if (field.getText().equals("")){
@@ -95,6 +96,7 @@ public class AddRepController implements Initializable {
                 message.setText("Represantant Ajouté");
                 fillTable2();
                 message.setStyle("-fx-text-fill:green");
+                field.clear();
             }
         }
     }

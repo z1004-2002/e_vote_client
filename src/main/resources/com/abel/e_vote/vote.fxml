@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.RepController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.VoteController">
     <left>
         <AnchorPane prefHeight="545.0" prefWidth="252.0" style="-fx-background-color: #0f7000;" BorderPane.alignment="CENTER">
             <children>
@@ -103,7 +104,7 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="represantantButton" layoutX="1.0" layoutY="259.0" mnemonicParsing="false" onAction="#goRep" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Représantant" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="represantantButton" layoutX="1.0" layoutY="259.0" mnemonicParsing="false" onAction="#goRep" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Représantant" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -113,7 +114,7 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="voteButton" layoutX="1.0" layoutY="305.0" mnemonicParsing="false" onAction="#goVote" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Votes" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="voteButton" layoutX="1.0" layoutY="305.0" mnemonicParsing="false" onAction="#goVote" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Votes" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -134,25 +135,38 @@
     <center>
         <AnchorPane prefHeight="545.0" prefWidth="505.0" BorderPane.alignment="CENTER">
             <children>
-                <TableView fx:id="listeRegion" layoutX="21.0" layoutY="190.0" prefHeight="295.0" prefWidth="461.0">
+                <TableView fx:id="table_vote" layoutX="13.0" layoutY="216.0" prefHeight="316.0" prefWidth="478.0">
                     <columns>
-                        <TableColumn fx:id="id_r_col" prefWidth="75.0" text="id_region" />
-                        <TableColumn fx:id="nom_r" prefWidth="229.0" text="nom" />
-                        <TableColumn fx:id="nbr_ele" prefWidth="156.0" text="nombres électeurs" />
+                        <TableColumn fx:id="id_r" prefWidth="66.0" text="id_region" />
+                        <TableColumn fx:id="nom_r" prefWidth="81.0" text="nom de la region" />
+                        <TableColumn fx:id="part_g" maxWidth="148.0" prefWidth="121.0" text="parti gagnant" />
+                        <TableColumn fx:id="percent" prefWidth="111.0" text="pourcentage(%)" />
+                        <TableColumn fx:id="nbr_v" prefWidth="95.0" text="nombres de voie" />
                     </columns>
                 </TableView>
-                <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGIONS ET PARTIS" textAlignment="CENTER" wrappingWidth="441.25">
+                <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VOTE ALEATOIRE" textAlignment="CENTER" wrappingWidth="441.25">
                     <font>
                         <Font name="System Bold" size="42.0" />
                     </font>
                 </Text>
-                <Line endX="364.0" layoutX="117.0" layoutY="180.0" startX="-95.0" stroke="#159c00" />
+                <Button fx:id="generate_vote" layoutX="203.0" layoutY="105.0" mnemonicParsing="false" onAction="#vote" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: #159c00cc;" text="GENERER" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Text fill="#159c00" layoutX="116.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliquer sur le bouton pour générer les votes">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Line endX="364.0" layoutX="117.0" layoutY="176.0" startX="-95.0" stroke="#159c00" />
                 <Line endX="364.0" layoutX="117.0" layoutY="76.0" startX="-95.0" stroke="#159c00" />
-                <Text fx:id="message" fill="GREEN" layoutX="62.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="402.0">
-               <font>
-                  <Font size="13.0" />
-               </font></Text>
-            <Pane fx:id="pane" layoutX="141.0" layoutY="122.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="221.0" />
+                <Text fill="#159c00" layoutX="22.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Résultat des votes">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text fx:id="message" fill="#33af20" layoutX="120.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="264.0" />
             </children>
         </AnchorPane>
     </center>

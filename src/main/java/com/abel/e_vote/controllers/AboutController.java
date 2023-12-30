@@ -1,5 +1,6 @@
 package com.abel.e_vote.controllers;
 
+import com.abel.e_vote.services.ServerAccess;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
@@ -28,5 +29,9 @@ public class AboutController {
     }
     public void goAbout(ActionEvent e) throws IOException{
         SwitchController.goAbout(e);
+    }
+    public void drop(ActionEvent e) throws IOException {
+        ServerAccess.dropDataBase();
+        goHome(e);
     }
 }

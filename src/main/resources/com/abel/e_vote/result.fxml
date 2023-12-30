@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.RepController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abel.e_vote.controllers.ResultController">
     <left>
         <AnchorPane prefHeight="545.0" prefWidth="252.0" style="-fx-background-color: #0f7000;" BorderPane.alignment="CENTER">
             <children>
@@ -103,7 +104,7 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="represantantButton" layoutX="1.0" layoutY="259.0" mnemonicParsing="false" onAction="#goRep" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Représantant" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="represantantButton" layoutX="1.0" layoutY="259.0" mnemonicParsing="false" onAction="#goRep" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Représantant" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -118,7 +119,7 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="resultatButton" layoutX="1.0" layoutY="351.0" mnemonicParsing="false" onAction="#goResult" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #33af2075;" text="Résultats" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="resultatButton" layoutX="1.0" layoutY="351.0" mnemonicParsing="false" onAction="#goResult" prefHeight="40.0" prefWidth="252.0" style="-fx-background-color: #d0ff57cf;" text="Résultats" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -134,25 +135,47 @@
     <center>
         <AnchorPane prefHeight="545.0" prefWidth="505.0" BorderPane.alignment="CENTER">
             <children>
-                <TableView fx:id="listeRegion" layoutX="21.0" layoutY="190.0" prefHeight="295.0" prefWidth="461.0">
+                <TableView fx:id="table_vote" layoutX="13.0" layoutY="136.0" prefHeight="147.0" prefWidth="478.0">
                     <columns>
-                        <TableColumn fx:id="id_r_col" prefWidth="75.0" text="id_region" />
-                        <TableColumn fx:id="nom_r" prefWidth="229.0" text="nom" />
-                        <TableColumn fx:id="nbr_ele" prefWidth="156.0" text="nombres électeurs" />
+                        <TableColumn fx:id="id_r" prefWidth="66.0" text="id_region" />
+                        <TableColumn fx:id="nom_r" prefWidth="81.0" text="nom de la region" />
+                        <TableColumn fx:id="part_g" maxWidth="148.0" prefWidth="121.0" text="parti gagnant" />
+                        <TableColumn fx:id="percent" prefWidth="111.0" text="pourcentage(%)" />
+                        <TableColumn fx:id="nbr_v" prefWidth="95.0" text="nombres de voie" />
                     </columns>
                 </TableView>
-                <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGIONS ET PARTIS" textAlignment="CENTER" wrappingWidth="441.25">
+                <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESULTATS TOTAL" textAlignment="CENTER" wrappingWidth="441.25">
                     <font>
                         <Font name="System Bold" size="42.0" />
                     </font>
                 </Text>
-                <Line endX="364.0" layoutX="117.0" layoutY="180.0" startX="-95.0" stroke="#159c00" />
+                <Line endX="364.0" layoutX="117.0" layoutY="292.0" startX="-95.0" stroke="#159c00" />
                 <Line endX="364.0" layoutX="117.0" layoutY="76.0" startX="-95.0" stroke="#159c00" />
-                <Text fx:id="message" fill="GREEN" layoutX="62.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="402.0">
+                <Text fx:id="message" fill="#159c00" layoutX="21.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner une region pour avoir ses résultats" textAlignment="CENTER" wrappingWidth="458.6513671875">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text fill="#33af20" layoutX="120.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="264.0" />
+            <Text fill="#159c00" layoutX="14.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Regions">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TableView fx:id="table_r" layoutX="11.0" layoutY="320.0" prefHeight="215.0" prefWidth="479.0">
+              <columns>
+                <TableColumn fx:id="id_p" prefWidth="86.0" text="identifiant du parti" />
+                <TableColumn fx:id="nom_p" prefWidth="101.0" text="nom du parti" />
+                  <TableColumn fx:id="rep" prefWidth="91.0" text="represantant" />
+                  <TableColumn fx:id="voi" prefWidth="95.0" text="nombre de voie" />
+                  <TableColumn fx:id="per" prefWidth="104.0" text="pourcentage(%)" />
+              </columns>
+            </TableView>
+            <Text fill="#159c00" layoutX="37.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner une region pour avoir les résultats dans cette dernière">
                <font>
                   <Font size="13.0" />
-               </font></Text>
-            <Pane fx:id="pane" layoutX="141.0" layoutY="122.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="221.0" />
+               </font>
+            </Text>
             </children>
         </AnchorPane>
     </center>

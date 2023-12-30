@@ -1,5 +1,6 @@
 package com.abel.e_vote.services;
 
+import com.abel.e_vote.Main;
 import com.abel.e_vote.models.Parti;
 import com.abel.e_vote.models.Region;
 import com.abel.e_vote.models.RegionParti;
@@ -16,8 +17,7 @@ import java.util.Map;
 
 public class ServerAccess {
     public static InetAddress getAdressServer() throws UnknownHostException {
-        byte[] a = {127,0,0,1};
-        return InetAddress.getByAddress(a);
+        return Main.address;
     }
     public static List<Region> getAllRegions(){
         try {

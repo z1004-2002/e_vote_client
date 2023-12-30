@@ -6,6 +6,16 @@ public class RegionParti {
     private String nom_representant;
     private String nom_parti;
     private Integer vote;
+    private float percent;
+
+    public RegionParti(Integer id_region, Integer id_parti, String nom_representant, String nom_parti, Integer vote, float percent) {
+        this.id_region = id_region;
+        this.id_parti = id_parti;
+        this.nom_representant = nom_representant;
+        this.nom_parti = nom_parti;
+        this.vote = vote;
+        this.percent = percent;
+    }
 
     public RegionParti(Integer id_region, Integer id_parti, String nom_representant, String nom_parti, Integer vote) {
         this.id_region = id_region;
@@ -53,6 +63,14 @@ public class RegionParti {
 
     public void setVote(Integer vote) {
         this.vote = vote;
+    }
+
+    public float getPercent() {
+        return percent;
+    }
+
+    public void setPercent(float percent) {
+        this.percent = percent;
     }
 
     @Override
