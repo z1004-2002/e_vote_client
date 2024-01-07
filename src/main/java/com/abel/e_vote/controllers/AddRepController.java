@@ -47,6 +47,7 @@ public class AddRepController implements Initializable {
     public TableColumn<RegionParti,String> nom_rep;
     public TableColumn<RegionParti,String> nom_part;
     public TableColumn<RegionParti,String> id_part;
+    public Text titre;
 
     public void fillTable() {
         List<Parti> partis = ServerAccess.getAllPartis();
@@ -56,6 +57,7 @@ public class AddRepController implements Initializable {
         table_p.getItems().addAll(partis);
     }
     public void fillTable2(){
+        titre.setText("REPRESANTANTS DANS LA REGION "+getNom_r());
         List<RegionParti> regionPartis = ServerAccess.getVoteByRegion(id_r);
         id_part.setCellValueFactory(new PropertyValueFactory<>("id_parti"));
         nom_part.setCellValueFactory(new PropertyValueFactory<>("nom_parti"));

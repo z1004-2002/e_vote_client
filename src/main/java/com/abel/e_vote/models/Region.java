@@ -6,11 +6,18 @@ public class Region {
     private Integer id_region;
     private String nom;
     private Integer electeurs;
-
+    private Integer votants;
     public Region(Integer id_region, String nom, Integer electeurs) {
         this.id_region = id_region;
         this.nom = nom;
         this.electeurs = electeurs;
+    }
+
+    public Region(Integer id_region, String nom, Integer electeurs, Integer votants) {
+        this.id_region = id_region;
+        this.nom = nom;
+        this.electeurs = electeurs;
+        this.votants = votants;
     }
 
     public Integer getId_region() {
@@ -37,13 +44,21 @@ public class Region {
         this.electeurs = electeurs;
     }
 
+    public Integer getVotants() {
+        return votants;
+    }
+
+    public void setVotants(Integer votants) {
+        this.votants = votants;
+    }
+
     @Override
     public String toString() {
         return "Region{" +
                 "id_region=" + id_region +
                 ", nom='" + nom + '\'' +
                 ", electeurs=" + electeurs +
+                ", votants=" + votants +
                 '}';
     }
-
 }

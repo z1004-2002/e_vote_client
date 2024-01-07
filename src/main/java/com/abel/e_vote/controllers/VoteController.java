@@ -32,7 +32,7 @@ public class VoteController implements Initializable {
         id_r.setCellValueFactory(new PropertyValueFactory<>("id_region"));
         nom_r.setCellValueFactory(new PropertyValueFactory<>("nom_region"));
         part_g.setCellValueFactory(new PropertyValueFactory<>("parti_gagnant"));
-        nbr_v.setCellValueFactory(new PropertyValueFactory<>("nombre_voie"));
+        nbr_v.setCellValueFactory(new PropertyValueFactory<>("nombre_votants"));
         percent.setCellValueFactory(new PropertyValueFactory<>("percent_result"));
     }
     public void vote() throws InterruptedException {
@@ -49,12 +49,12 @@ public class VoteController implements Initializable {
                     regionParti = r;
                 }
             }
-            percent_result = (float) (((float)regionParti.getVote())/((float)region.getElecteurs())*100.0);
+            percent_result = (float) (((float)region.getVotants())/((float)region.getElecteurs())*100.0);
             results.add(new Result(
                     region.getId_region(),
                     region.getNom(),
                     regionParti.getNom_parti(),
-                    regionParti.getVote(),
+                    region.getVotants(),
                     (float) Math.round(percent_result*100)/100
             ));
         }

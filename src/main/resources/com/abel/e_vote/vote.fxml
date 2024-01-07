@@ -135,13 +135,13 @@
     <center>
         <AnchorPane prefHeight="545.0" prefWidth="505.0" BorderPane.alignment="CENTER">
             <children>
-                <TableView fx:id="table_vote" layoutX="13.0" layoutY="216.0" prefHeight="316.0" prefWidth="478.0">
+                <TableView fx:id="table_vote" layoutX="2.0" layoutY="216.0" prefHeight="316.0" prefWidth="499.0">
                     <columns>
-                        <TableColumn fx:id="id_r" prefWidth="66.0" text="id_region" />
-                        <TableColumn fx:id="nom_r" prefWidth="81.0" text="nom de la region" />
-                        <TableColumn fx:id="part_g" maxWidth="148.0" prefWidth="121.0" text="parti gagnant" />
-                        <TableColumn fx:id="percent" prefWidth="111.0" text="pourcentage(%)" />
-                        <TableColumn fx:id="nbr_v" prefWidth="95.0" text="nombres de voie" />
+                        <TableColumn fx:id="id_r" prefWidth="74.0" text="numero region" />
+                        <TableColumn fx:id="nom_r" prefWidth="109.0" text="nom de la region" />
+                        <TableColumn fx:id="part_g" maxWidth="155.0" prefWidth="107.0" text="parti gagnant" />
+                        <TableColumn fx:id="percent" prefWidth="115.0" text="\% participation(%)" />
+                        <TableColumn fx:id="nbr_v" prefWidth="88.0" text="total votants" />
                     </columns>
                 </TableView>
                 <Text fill="#159c00" layoutX="31.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VOTE ALEATOIRE" textAlignment="CENTER" wrappingWidth="441.25">

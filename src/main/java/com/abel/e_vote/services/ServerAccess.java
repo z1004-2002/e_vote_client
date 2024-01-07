@@ -43,7 +43,8 @@ public class ServerAccess {
                         new Region(
                                 (Integer) rs.get("id_region"),
                                 (String) rs.get("nom"),
-                                (Integer) rs.get("electeurs")
+                                (Integer) rs.get("electeurs"),
+                                (Integer) rs.get("votants")
                         )
                 );
             }
