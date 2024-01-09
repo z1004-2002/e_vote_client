@@ -1,6 +1,6 @@
 package com.abel.e_vote.models;
 
-public class RegionParti {
+public class Represantant {
     private Integer id_region;
     private Integer id_parti;
     private String nom_representant;
@@ -8,16 +8,8 @@ public class RegionParti {
     private Integer vote;
     private float percent;
 
-    public RegionParti(Integer id_region, Integer id_parti, String nom_representant, String nom_parti, Integer vote, float percent) {
-        this.id_region = id_region;
-        this.id_parti = id_parti;
-        this.nom_representant = nom_representant;
-        this.nom_parti = nom_parti;
-        this.vote = vote;
-        this.percent = percent;
-    }
 
-    public RegionParti(Integer id_region, Integer id_parti, String nom_representant, String nom_parti, Integer vote) {
+    public Represantant(Integer id_region, Integer id_parti, String nom_representant, String nom_parti, Integer vote) {
         this.id_region = id_region;
         this.id_parti = id_parti;
         this.nom_representant = nom_representant;

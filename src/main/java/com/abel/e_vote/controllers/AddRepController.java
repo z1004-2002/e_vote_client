@@ -1,28 +1,18 @@
 package com.abel.e_vote.controllers;
 
-import com.abel.e_vote.HelloApplication;
 import com.abel.e_vote.models.Parti;
-import com.abel.e_vote.models.RegionParti;
+import com.abel.e_vote.models.Represantant;
 import com.abel.e_vote.services.ServerAccess;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -43,10 +33,10 @@ public class AddRepController implements Initializable {
     public Integer id_parti;
     public String nom_parti;
 
-    public TableView<RegionParti> table_part;
-    public TableColumn<RegionParti,String> nom_rep;
-    public TableColumn<RegionParti,String> nom_part;
-    public TableColumn<RegionParti,String> id_part;
+    public TableView<Represantant> table_part;
+    public TableColumn<Represantant,String> nom_rep;
+    public TableColumn<Represantant,String> nom_part;
+    public TableColumn<Represantant,String> id_part;
     public Text titre;
 
     public void fillTable() {
@@ -58,12 +48,12 @@ public class AddRepController implements Initializable {
     }
     public void fillTable2(){
         titre.setText("REPRESANTANTS DANS LA REGION "+getNom_r());
-        List<RegionParti> regionPartis = ServerAccess.getVoteByRegion(id_r);
+        List<Represantant> represantants = ServerAccess.getVoteByRegion(id_r);
         id_part.setCellValueFactory(new PropertyValueFactory<>("id_parti"));
         nom_part.setCellValueFactory(new PropertyValueFactory<>("nom_parti"));
         nom_rep.setCellValueFactory(new PropertyValueFactory<>("nom_representant"));
         table_part.getItems().clear();
-        table_part.getItems().addAll(regionPartis);
+        table_part.getItems().addAll(represantants);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.abel.e_vote.controllers;
 
 import com.abel.e_vote.models.Region;
-import com.abel.e_vote.models.RegionParti;
+import com.abel.e_vote.models.Represantant;
 import com.abel.e_vote.models.Result;
 import com.abel.e_vote.services.ServerAccess;
 import javafx.event.ActionEvent;
@@ -13,7 +13,6 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -42,18 +41,18 @@ public class VoteController implements Initializable {
         Thread.sleep(500);
         List<Region> regions = ServerAccess.getAllRegions();
         for (Region region:regions){
-            List<RegionParti> regionPartis = ServerAccess.getVoteByRegion(region.getId_region());
-            RegionParti regionParti = regionPartis.get(0);
-            for (RegionParti r:regionPartis){
-                if (r.getVote()>regionParti.getVote()){
-                    regionParti = r;
+            List<Represantant> represantants = ServerAccess.getVoteByRegion(region.getId_region());
+            Represantant represantant = represantants.get(0);
+            for (Represantant r: represantants){
+                if (r.getVote()> represantant.getVote()){
+                    represantant = r;
                 }
             }
             percent_result = (float) (((float)region.getVotants())/((float)region.getElecteurs())*100.0);
             results.add(new Result(
                     region.getId_region(),
                     region.getNom(),
-                    regionParti.getNom_parti(),
+                    represantant.getNom_parti(),
                     region.getVotants(),
                     (float) Math.round(percent_result*100)/100
             ));

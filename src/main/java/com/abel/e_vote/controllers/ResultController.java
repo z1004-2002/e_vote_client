@@ -1,7 +1,7 @@
 package com.abel.e_vote.controllers;
 
 import com.abel.e_vote.models.Region;
-import com.abel.e_vote.models.RegionParti;
+import com.abel.e_vote.models.Represantant;
 import com.abel.e_vote.models.Result;
 import com.abel.e_vote.services.ServerAccess;
 import javafx.beans.binding.Bindings;
@@ -25,10 +25,9 @@ public class ResultController implements Initializable {
     public TableColumn<Result,String> nom_r;
     public TableColumn<Result,String> part_g;
     public TableColumn<Result,Integer> nbr_v;
+    public TableColumn<Result,String> rep;
     public TableColumn<Result,Float> percent;
     public Text message;
-    public TableView<RegionParti> table_r;
-    public TableColumn<Result,String> rep;
     public ListView<String> region_plus;
     public ListView<String> region_tous;
     public Text per;
@@ -38,6 +37,10 @@ public class ResultController implements Initializable {
     public Text rep_n;
     public Text nom_n;
     public Text id_n;
+    public TableView<Represantant> table_r;
+    public TableColumn<Represantant,String> par;
+    public TableColumn<Represantant,String> repre;
+    public TableColumn<Represantant,Float> per_v;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,6 +49,11 @@ public class ResultController implements Initializable {
         nbr_v.setCellValueFactory(new PropertyValueFactory<>("nombre_votants"));
         percent.setCellValueFactory(new PropertyValueFactory<>("percent_result"));
         rep.setCellValueFactory(new PropertyValueFactory<>("represantant"));
+
+        par.setCellValueFactory(new PropertyValueFactory<>("nom_parti"));
+        repre.setCellValueFactory(new PropertyValueFactory<>("nom_representant"));
+        per_v.setCellValueFactory(new PropertyValueFactory<>("percent"));
+        table_r.getSortOrder().add(per_v);
 
         try {
             filltable();
@@ -64,6 +72,7 @@ public class ResultController implements Initializable {
             nom_n.setText(result.getParti_perdant());
             rep_w.setText(result.getRepresantant());
             rep_n.setText(result.getRepresantant_perdant());
+            filltable(result);
             return "Resultat dans la région "+result.getNom_region();
         },table_vote.getSelectionModel().selectedItemProperty()));
 
@@ -78,12 +87,12 @@ public class ResultController implements Initializable {
         int elect=0;
         int vot=0;
         for (Region region:regions){
-            List<RegionParti> regionPartis = ServerAccess.getVoteByRegion(region.getId_region());
-            RegionParti regionParti = regionPartis.get(0);
-            RegionParti perdant = regionPartis.get(0);
-            for (RegionParti r:regionPartis){
-                if (r.getVote()>regionParti.getVote()){
-                    regionParti = r;
+            List<Represantant> represantants = ServerAccess.getVoteByRegion(region.getId_region());
+            Represantant represantant = represantants.get(0);
+            Represantant perdant = represantants.get(0);
+            for (Represantant r: represantants){
+                if (r.getVote()> represantant.getVote()){
+                    represantant = r;
                 }
                 if (r.getVote()<perdant.getVote()){
                     perdant = r;
@@ -97,13 +106,13 @@ public class ResultController implements Initializable {
             results.add(new Result(
                     region.getId_region(),
                     region.getNom(),
-                    regionParti.getNom_parti(),
+                    represantant.getNom_parti(),
                     region.getVotants(),
                     (float) Math.round(percent_result*100)/100,
                     region.getElecteurs(),
                     region.getVotants(),
-                    regionParti.getNom_representant(),
-                    regionParti.getId_parti(),
+                    represantant.getNom_representant(),
+                    represantant.getId_parti(),
                     perdant.getId_parti(),
                     perdant.getNom_parti(),
                     perdant.getNom_representant()
@@ -125,16 +134,16 @@ public class ResultController implements Initializable {
         table_vote.getItems().addAll(results);
     }
     public void filltable(Result r){
-        List<RegionParti> regionPartis = ServerAccess.getVoteByRegion(r.getId_region());
+        List<Represantant> represantants = ServerAccess.getVoteByRegion(r.getId_region());
         float percent_result;
-        for (RegionParti regionParti:regionPartis){
-            percent_result = (float) (((float)regionParti.getVote())/((float)r.getVotants())*100.0);
-            regionParti.setPercent(
+        for (Represantant represantant : represantants){
+            percent_result = (float) (((float) represantant.getVote())/((float)r.getVotants())*100.0);
+            represantant.setPercent(
                     (float) Math.round(percent_result * 100) /100
             );
         }
         table_r.getItems().clear();
-        table_r.getItems().addAll(regionPartis);
+        table_r.getItems().addAll(represantants);
     }
     public void logout(ActionEvent e) throws IOException {
         SwitchController.logout(e);

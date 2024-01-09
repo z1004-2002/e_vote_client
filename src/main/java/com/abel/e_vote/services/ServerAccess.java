@@ -3,7 +3,7 @@ package com.abel.e_vote.services;
 import com.abel.e_vote.Main;
 import com.abel.e_vote.models.Parti;
 import com.abel.e_vote.models.Region;
-import com.abel.e_vote.models.RegionParti;
+import com.abel.e_vote.models.Represantant;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -85,7 +85,7 @@ public class ServerAccess {
             throw new RuntimeException(e);
         }
     }
-    public static List<RegionParti> getVoteByRegion(Integer id_region){
+    public static List<Represantant> getVoteByRegion(Integer id_region){
         try {
             DatagramSocket socket = new DatagramSocket();
             InetAddress ad2 = getAdressServer();
@@ -103,10 +103,10 @@ public class ServerAccess {
             packet = new DatagramPacket(buf, buf.length);
             socket.receive(packet);
             List<Map<String, Object>> result = Service.transformToListOfMap(packet.getData());
-            List<RegionParti> resultatVote = new ArrayList<>();
+            List<Represantant> resultatVote = new ArrayList<>();
             for (Map<String, Object> rs:result){
                 resultatVote.add(
-                        new RegionParti(
+                        new Represantant(
                                 (Integer) rs.get("id_region"),
                                 (Integer) rs.get("id_parti"),
                                 (String) rs.get("nom_representant"),
