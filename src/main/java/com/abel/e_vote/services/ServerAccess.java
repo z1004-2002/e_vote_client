@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ServerAccess {
+public abstract class ServerAccess {
     public static InetAddress getAdressServer() throws UnknownHostException {
         return Main.address;
     }

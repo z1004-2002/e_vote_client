@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.List;
 import java.util.Map;
 
-public class Service {
+public abstract class Service {
     public static byte [] transformToByte(Map<String, Object> requete){
         try {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();

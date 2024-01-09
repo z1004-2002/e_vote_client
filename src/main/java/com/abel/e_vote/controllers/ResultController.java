@@ -53,7 +53,6 @@ public class ResultController implements Initializable {
         par.setCellValueFactory(new PropertyValueFactory<>("nom_parti"));
         repre.setCellValueFactory(new PropertyValueFactory<>("nom_representant"));
         per_v.setCellValueFactory(new PropertyValueFactory<>("percent"));
-        table_r.getSortOrder().add(per_v);
 
         try {
             filltable();
@@ -73,6 +72,9 @@ public class ResultController implements Initializable {
             rep_w.setText(result.getRepresantant());
             rep_n.setText(result.getRepresantant_perdant());
             filltable(result);
+            table_r.getSortOrder().add(per_v);
+            per_v.setSortType(TableColumn.SortType.DESCENDING);
+            table_r.sort();
             return "Resultat dans la région "+result.getNom_region();
         },table_vote.getSelectionModel().selectedItemProperty()));
 

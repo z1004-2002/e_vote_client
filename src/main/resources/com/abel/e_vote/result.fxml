@@ -168,7 +168,7 @@
             <Text fill="#159c00" layoutX="5.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Region où tous les électeurs ont votés pour le même parti" textAlignment="CENTER" wrappingWidth="161.625" />
             <Line endX="53.0" layoutX="120.0" layoutY="385.0" startX="-112.0" stroke="#159c00" />
             <ListView fx:id="region_tous" layoutX="16.0" layoutY="439.0" prefHeight="95.0" prefWidth="140.0" />
-            <Text fill="#159c00" layoutX="179.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parti gagnant 🎉🎉🎉" textAlignment="CENTER" wrappingWidth="130.6513671875">
+            <Text fill="#159c00" layoutX="179.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parti gagnant 🎉🎉🎉" textAlignment="CENTER" wrappingWidth="130.6513671875">
                <font>
                   <Font size="14.0" />
                </font>
@@ -183,7 +183,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fill="#159c00" layoutX="349.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parti ayant le mauvais score" textAlignment="CENTER" wrappingWidth="118.6513671875">
+            <Text fill="#159c00" layoutX="349.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parti ayant le mauvais score" textAlignment="CENTER" wrappingWidth="118.6513671875">
                <font>
                   <Font size="14.0" />
                </font>
